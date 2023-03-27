@@ -1,0 +1,26 @@
+
+:root{
+    --color-green:#31c48d;
+    --color-white:#ffffff;
+    --color-dark-grey:#33333d;
+    --color-medium-grey:#424250;
+    --color-light-grey:#d2d6dc;
+}
+
+*{
+    font-family:Roboto,Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    background-color: var(--color-medium-grey);
+    color: var(--color-white);
+}
+/* header */
+.header{
+    text-align: center;
+}
+/* Controls */
+.controls{
+    background:yellow;
+}
