@@ -12,9 +12,11 @@
 </head>
 <body>
     <header class="header">
-        <h1>Tally Count</h1>
+        <h1 class="header__title">
+            Tally Count
+        </h1>
     </header>
-    <div class="controls">
+    <!-- <aside class="controls">
         <label for="">
             <span>Display</span>
             <select>
@@ -31,8 +33,22 @@
             </select>
         </label>
         <button>Settings</button>
+    </aside> -->
+
+    <main class="counter">
+        <input id="number"class="counter__value" readonly value="0">
+        
+        <div class="counter__actions">
+        <button id="subtract" class="counter__button counter__button_first">-</button>
+        <button id="add" class="counter__button">+</button>
     </div>
+    </main>
+
     <div></div>
-    <footer></footer>
+    <footer class="footer">
+        <p>Inspired by <a class="footer__link" href="https://tallycount.app">Talley Count</a>. Note that this is merely a practice project for learning JavaScript.</p>
+        
+    </footer>
+    <script src="./script.js" defer></script>
 </body>
 </html>
