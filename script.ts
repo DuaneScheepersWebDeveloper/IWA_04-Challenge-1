@@ -1,22 +1,44 @@
-const addButton = document.querySelector("#add")!;
-const subtractButton = document.querySelector("#subtract")!;
-const countDisplay = document.querySelector("#number")!;
+const number = document.querySelector('#number') as HTMLInputElement;
+const addButton = document.querySelector('#add') as HTMLButtonElement;
+const subtractButton = document.querySelector('#subtract')as HTMLButtonElement;
+//parseInt() is Number() in typescript
+const MAX_NUMBER = 20;
+const MIN_NUMBER = -20;
 
-let count = 0;
+const handleSubtract=(event: MouseEvent)=> {
+  console.log("Clicked on the Subtract button " );
 
-const updateCountDisplay=()=> {
-  countDisplay.textContent = count.toString();
-  console.log(countDisplay.textContent);
+  const newValue = Number(number.value) -1;
+  number.value = newValue.toString();
+  
+  if(addButton.disabled === true){
+    addButton.disabled = false;
+  }
+
+  if (newValue <= MIN_NUMBER){
+    subtractButton.disabled = true;
+    // addButton.disabled = false;
+  }
+
+  console.log(typeof(Number(number.value)));
 }
 
+const handleAdd=(event: MouseEvent)=> {
+    console.log("Clicked on the adding button");
+    const newValue = Number(number.value)+1;
+    number.value = newValue.toString();
 
-addButton.addEventListener("click", () => {
-  count++;
-  updateCountDisplay();
-});
+    if(subtractButton.disabled === true){
+      subtractButton.disabled = false;
+    }
 
+    if (newValue >= MAX_NUMBER){
+      addButton.disabled = true;
+      // subtractButton.disabled = false;
+    }
 
-subtractButton.addEventListener("click", () => {
-    count--;
-    updateCountDisplay();
-});
+    console.log(typeof(Number(number.value)));
+  }
+  
+  addButton.addEventListener("click", handleAdd);
+  subtractButton.addEventListener("click", handleSubtract);
