@@ -76,10 +76,10 @@ transform:translateY(2%);
 }
 
 .counter__button:disabled {
-    background: red;
+    opacity:0.2;
 }
 .counter__button:enabled {
-    background: green;
+    background: var(--color-green);
 }
 .counter__button_first{
     border-right:1px solid var(--color-light-grey);
